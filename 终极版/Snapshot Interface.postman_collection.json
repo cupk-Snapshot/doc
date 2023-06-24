@@ -1,0 +1,2019 @@
+{
+	"info": {
+		"_postman_id": "54054e57-a124-4a61-a09d-f494b3ac12c0",
+		"name": "Snapshot Interface",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "oauth2令牌接口",
+			"item": [
+				{
+					"name": "获取授权码",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/authorize?response_type=code&client_id=snapshot&redirect_uri=https://www.baidu.com&state=state",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"authorize"
+							],
+							"query": [
+								{
+									"key": "response_type",
+									"value": "code"
+								},
+								{
+									"key": "client_id",
+									"value": "snapshot"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "https://www.baidu.com"
+								},
+								{
+									"key": "state",
+									"value": "state"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "授权码模式认证",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/oauth/token?grant_type=authorization_code&code=ovK6Bd&redirect_uri=https://www.baidu.com&client_id=snapshot&client_secret=snapshot-secret",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"oauth",
+								"token"
+							],
+							"query": [
+								{
+									"key": "grant_type",
+									"value": "authorization_code"
+								},
+								{
+									"key": "code",
+									"value": "ovK6Bd"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "https://www.baidu.com"
+								},
+								{
+									"key": "client_id",
+									"value": "snapshot"
+								},
+								{
+									"key": "client_secret",
+									"value": "snapshot-secret"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取短信验证码",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/oauth/sms?phone_num=13975641124",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"oauth",
+								"sms"
+							],
+							"query": [
+								{
+									"key": "phone_num",
+									"value": "13975641124"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "短信验证码模式认证",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/oauth/token?grant_type=sms_code&phone_num=13975641124&sms_code=994127&client_id=snapshot&client_secret=snapshot-secret",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"oauth",
+								"token"
+							],
+							"query": [
+								{
+									"key": "grant_type",
+									"value": "sms_code"
+								},
+								{
+									"key": "phone_num",
+									"value": "13975641124"
+								},
+								{
+									"key": "sms_code",
+									"value": "994127"
+								},
+								{
+									"key": "client_id",
+									"value": "snapshot"
+								},
+								{
+									"key": "client_secret",
+									"value": "snapshot-secret"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "密码模式认证",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/oauth/token?grant_type=password&username=test&password=123&client_id=snapshot&client_secret=snapshot-secret",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"oauth",
+								"token"
+							],
+							"query": [
+								{
+									"key": "grant_type",
+									"value": "password"
+								},
+								{
+									"key": "username",
+									"value": "test"
+								},
+								{
+									"key": "password",
+									"value": "123"
+								},
+								{
+									"key": "client_id",
+									"value": "snapshot"
+								},
+								{
+									"key": "client_secret",
+									"value": "snapshot-secret"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "密码模式认证",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/oauth/token?grant_type=password&username=ad&password=123&client_id=snapshot&client_secret=snapshot-secret",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"oauth",
+										"token"
+									],
+									"query": [
+										{
+											"key": "grant_type",
+											"value": "password"
+										},
+										{
+											"key": "username",
+											"value": "ad"
+										},
+										{
+											"key": "password",
+											"value": "123"
+										},
+										{
+											"key": "client_id",
+											"value": "snapshot"
+										},
+										{
+											"key": "client_secret",
+											"value": "snapshot-secret"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 13:27:12 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1791"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"msg\": \"success\",\n    \"data\": {\n        \"access_token\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJhdmF0YXJVcmwiOiJodHRwOi8vcndmeWUyaWF3LmhiLWJrdC5jbG91ZGRuLmNvbS9waWN0dXJlLzI5ZGVkMGEzMGM0NjRmMjM4YWJiZjgyNTU5OTdjMTI0JUU1JUE0JUI0JUU1JTgzJThGLmpwZyIsInVzZXJfbmFtZSI6ImFkIiwibmlja05hbWUiOiJ0ZXN0IiwicGhvbmVOdW0iOiIxODE4NzE1ODU0MiIsInVzZXJJZCI6MywiY2xpZW50X2lkIjoic25hcHNob3QiLCJzY29wZSI6WyJhbGwiXSwiaWRjYXJkIjoiNDMwNzAyMTk5MDAzMDczMTY3IiwibmFtZSI6IuWwj-aYjiIsImV4cCI6MTY4NzE4ODQzMiwianRpIjoiY2FlODc3YjgtOWI1Ni00NzE5LTkxOTUtODMyNDg4ZWQ2YTdlIiwidXNlcm5hbWUiOiJhZCJ9.qcXBYdB8LdjYrbppzs2VrBrLVoebRLYbTo6MfBO26ulHuZYwLAaVFFJ8Y5C5Ku0-j496TbBH1wNVj6hshkOq7oGj_0tpUAnsGy47X8NM_MVjU_OgmYUTViLSGcYsmDHzRap1LvqIJ_FrRpCeF7vl_7i82jm5P8Wp94ZhFQoJdHI\",\n        \"refresh_token\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJhdmF0YXJVcmwiOiJodHRwOi8vcndmeWUyaWF3LmhiLWJrdC5jbG91ZGRuLmNvbS9waWN0dXJlLzI5ZGVkMGEzMGM0NjRmMjM4YWJiZjgyNTU5OTdjMTI0JUU1JUE0JUI0JUU1JTgzJThGLmpwZyIsInVzZXJfbmFtZSI6ImFkIiwibmlja05hbWUiOiJ0ZXN0IiwicGhvbmVOdW0iOiIxODE4NzE1ODU0MiIsInVzZXJJZCI6MywiY2xpZW50X2lkIjoic25hcHNob3QiLCJzY29wZSI6WyJhbGwiXSwiaWRjYXJkIjoiNDMwNzAyMTk5MDAzMDczMTY3IiwiYXRpIjoiY2FlODc3YjgtOWI1Ni00NzE5LTkxOTUtODMyNDg4ZWQ2YTdlIiwibmFtZSI6IuWwj-aYjiIsImV4cCI6MTY4NzE5NjAzMiwianRpIjoiZTRlMTI3ZDAtZWY3OC00MDk4LWJjNjQtMzJkNDljYTM3OGM2IiwidXNlcm5hbWUiOiJhZCJ9.It14IEyosoEnBQgpkBKUSBInLxShyEg1qu0QzljowrF3bVNbH8a8hFO-Y1_4QYP52crTuHf_YLfSTmksAypP4fXyl8oHztkeaOORg_K_SEooNmG1yOPEZUijviVFViJquVxgUi6JG7IUgNnI9JV2EsoDL-wdJyjVM7a-Y3Zl1Aw\",\n        \"expires_in\": 7199,\n        \"user\": {\n            \"role\": \"admin\",\n            \"avatarUrl\": \"http://rwfye2iaw.hb-bkt.clouddn.com/picture/29ded0a30c464f238abbf8255997c124%E5%A4%B4%E5%83%8F.jpg\",\n            \"nickName\": \"test\",\n            \"idcard\": \"430702199003073167\",\n            \"name\": \"小明\",\n            \"phoneNum\": \"18187158542\",\n            \"userId\": 3,\n            \"username\": \"ad\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "刷新token",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/oauth/token?grant_type=refresh_token&refresh_token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdmF0YXJVcmwiOiJodHRwOi8vaHVhbHVvc2FrdXJhLnRvcC9hdmF0YXIvZm94LmpwZyIsInVzZXJfbmFtZSI6InRlc3QiLCJuaWNrTmFtZSI6IkplcnJ5IiwicGhvbmVOdW0iOiIxMzk3NTY0MTEyNCIsInVzZXJJZCI6MiwiYXV0aG9yaXRpZXMiOlsic2VsZWN0Il0sImNsaWVudF9pZCI6InNuYXBzaG90Iiwic2NvcGUiOlsiYWxsIl0sImlkY2FyZCI6IjQzMDcwMjE5OTAwMzA3MzE3OSIsIm5hbWUiOiLmnY7lm5siLCJleHAiOjE2ODY4Mzg5OTIsImp0aSI6ImI0NzAxNjliLTcxNDYtNGQzNi04M2NhLTcwMDRhMjZlMzg4NCIsInVzZXJuYW1lIjoidGVzdCJ9.ZuB4xLirPKNhXuCISvZsO1nEkpk6w7x-59iQC8KLbGJn-QVcAhokDPoF1AlAOtVOFoZtpUEv1iaExl7mSaxc7YM9inbhLjuYIjvzleXQXIML-Ly6YUnsStakeqr8ESE8tZg4iN1TuvahF1NlIoq-958ZQb5uNEA5fUikv7xuDVk&client_id=snapshot&client_secret=snapshot-secret",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"oauth",
+								"token"
+							],
+							"query": [
+								{
+									"key": "grant_type",
+									"value": "refresh_token"
+								},
+								{
+									"key": "refresh_token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdmF0YXJVcmwiOiJodHRwOi8vaHVhbHVvc2FrdXJhLnRvcC9hdmF0YXIvZm94LmpwZyIsInVzZXJfbmFtZSI6InRlc3QiLCJuaWNrTmFtZSI6IkplcnJ5IiwicGhvbmVOdW0iOiIxMzk3NTY0MTEyNCIsInVzZXJJZCI6MiwiYXV0aG9yaXRpZXMiOlsic2VsZWN0Il0sImNsaWVudF9pZCI6InNuYXBzaG90Iiwic2NvcGUiOlsiYWxsIl0sImlkY2FyZCI6IjQzMDcwMjE5OTAwMzA3MzE3OSIsIm5hbWUiOiLmnY7lm5siLCJleHAiOjE2ODY4Mzg5OTIsImp0aSI6ImI0NzAxNjliLTcxNDYtNGQzNi04M2NhLTcwMDRhMjZlMzg4NCIsInVzZXJuYW1lIjoidGVzdCJ9.ZuB4xLirPKNhXuCISvZsO1nEkpk6w7x-59iQC8KLbGJn-QVcAhokDPoF1AlAOtVOFoZtpUEv1iaExl7mSaxc7YM9inbhLjuYIjvzleXQXIML-Ly6YUnsStakeqr8ESE8tZg4iN1TuvahF1NlIoq-958ZQb5uNEA5fUikv7xuDVk"
+								},
+								{
+									"key": "client_id",
+									"value": "snapshot"
+								},
+								{
+									"key": "client_secret",
+									"value": "snapshot-secret"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "校验token",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/oauth/check_token?token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdmF0YXJVcmwiOiJodHRwOi8vcndmeWUyaWF3LmhiLWJrdC5jbG91ZGRuLmNvbS9waWN0dXJlLzI5ZGVkMGEzMGM0NjRmMjM4YWJiZjgyNTU5OTdjMTI0JUU1JUE0JUI0JUU1JTgzJThGLmpwZyIsInVzZXJfbmFtZSI6ImFkIiwibmlja05hbWUiOiLmmLXnp7AiLCJzY29wZSI6WyJhbGwiXSwiaWRjYXJkIjoiNDMwNzAyMTk5MDAzMDczMTY3IiwibmFtZSI6ImxzIiwicGhvbmVOdW0iOiIxODE4NzE1ODU0MiIsImV4cCI6MTY4NzE2NDc0MywidXNlcklkIjozLCJqdGkiOiJjZTVmOTZjYy05ZDZhLTQyNDQtYTFhMy1mN2I2YzI0Y2E0MjYiLCJjbGllbnRfaWQiOiJzbmFwc2hvdCIsInVzZXJuYW1lIjoiYWQifQ.c7wXdgmHM_qBCGdy8D3BvrOJbQOZiwlOKhLM2SC0QFBMxlPp5D-y8WVIugUMxAZ3oM1paSvLbl_zCeFBUzf0pbPW-NjhWkpfmEpmz2G0dWPG9fm1SdtD12rBYhcRXoCx6nkEGafEI2f2zWwEZBrHhLOD6ngu9HAvRzUFIBJOpkc",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"oauth",
+								"check_token"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdmF0YXJVcmwiOiJodHRwOi8vcndmeWUyaWF3LmhiLWJrdC5jbG91ZGRuLmNvbS9waWN0dXJlLzI5ZGVkMGEzMGM0NjRmMjM4YWJiZjgyNTU5OTdjMTI0JUU1JUE0JUI0JUU1JTgzJThGLmpwZyIsInVzZXJfbmFtZSI6ImFkIiwibmlja05hbWUiOiLmmLXnp7AiLCJzY29wZSI6WyJhbGwiXSwiaWRjYXJkIjoiNDMwNzAyMTk5MDAzMDczMTY3IiwibmFtZSI6ImxzIiwicGhvbmVOdW0iOiIxODE4NzE1ODU0MiIsImV4cCI6MTY4NzE2NDc0MywidXNlcklkIjozLCJqdGkiOiJjZTVmOTZjYy05ZDZhLTQyNDQtYTFhMy1mN2I2YzI0Y2E0MjYiLCJjbGllbnRfaWQiOiJzbmFwc2hvdCIsInVzZXJuYW1lIjoiYWQifQ.c7wXdgmHM_qBCGdy8D3BvrOJbQOZiwlOKhLM2SC0QFBMxlPp5D-y8WVIugUMxAZ3oM1paSvLbl_zCeFBUzf0pbPW-NjhWkpfmEpmz2G0dWPG9fm1SdtD12rBYhcRXoCx6nkEGafEI2f2zWwEZBrHhLOD6ngu9HAvRzUFIBJOpkc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取公钥",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/oauth/token_key",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"oauth",
+								"token_key"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "管理员接口",
+			"item": [
+				{
+					"name": "受理表接口",
+					"item": [
+						{
+							"name": "分页查询",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/admin/accept/all?current=1&size=10",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"accept",
+										"all"
+									],
+									"query": [
+										{
+											"key": "current",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get all page",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/admin/accept/all?current=1&size=10",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"admin",
+												"accept",
+												"all"
+											],
+											"query": [
+												{
+													"key": "current",
+													"value": "1"
+												},
+												{
+													"key": "size",
+													"value": "10"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 17 Jun 2023 07:32:31 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 200,\n    \"msg\": \"success\",\n    \"data\": {\n        \"list\": [\n            {\n                \"acceptId\": 1,\n                \"reportVo\": {\n                    \"userVo\": {\n                        \"userId\": 2,\n                        \"nickName\": \"Jerry\",\n                        \"avatarUrl\": \"http://hualuosakura.top/avatar/fox.jpg\",\n                        \"username\": \"test\",\n                        \"idcard\": \"430702199003073179\",\n                        \"phoneNum\": \"18473612917\"\n                    },\n                    \"wfTime\": \"2023-06-17 01:10:16\",\n                    \"wfAddress\": \"华美达酒店路口红绿灯\",\n                    \"wfType\": \"闯红灯\",\n                    \"wfDesc\": null,\n                    \"hphm\": \"桂JL2710\",\n                    \"hpzl\": \"蓝底白字\",\n                    \"pic1Url\": \"http://hualuosakura.top/picture/%E6%A1%82JL2710%202023-6-17.jpg\",\n                    \"pic2Url\": null,\n                    \"pic3Url\": null\n                },\n                \"level\": null,\n                \"examineId\": 1,\n                \"examineName\": \"张三\",\n                \"handlerId\": null,\n                \"handlerName\": null,\n                \"isPublic\": 0,\n                \"status\": \"未通过审核\"\n            },\n            {\n                \"acceptId\": 2,\n                \"reportVo\": {\n                    \"userVo\": {\n                        \"userId\": 2,\n                        \"nickName\": \"Jerry\",\n                        \"avatarUrl\": \"http://hualuosakura.top/avatar/fox.jpg\",\n                        \"username\": \"test\",\n                        \"idcard\": \"430702199003073179\",\n                        \"phoneNum\": \"18473612917\"\n                    },\n                    \"wfTime\": \"2023-06-17 01:10:16\",\n                    \"wfAddress\": \"中华园红绿灯路口\",\n                    \"wfType\": \"逆行\",\n                    \"wfDesc\": null,\n                    \"hphm\": \"桂JRN950\",\n                    \"hpzl\": \"蓝底白字\",\n                    \"pic1Url\": \"http://hualuosakura.top/picture/%E6%A1%82JAH090%202023-6-17.jpg\",\n                    \"pic2Url\": null,\n                    \"pic3Url\": null\n                },\n                \"level\": \"严重隐患\",\n                \"examineId\": 1,\n                \"examineName\": \"张三\",\n                \"handlerId\": null,\n                \"handlerName\": null,\n                \"isPublic\": 0,\n                \"status\": \"通过审核\"\n            },\n            {\n                \"acceptId\": 3,\n                \"reportVo\": {\n                    \"userVo\": {\n                        \"userId\": 2,\n                        \"nickName\": \"Jerry\",\n                        \"avatarUrl\": \"http://hualuosakura.top/avatar/fox.jpg\",\n                        \"username\": \"test\",\n                        \"idcard\": \"430702199003073179\",\n                        \"phoneNum\": \"18473612917\"\n                    },\n                    \"wfTime\": \"2023-06-17 01:10:16\",\n                    \"wfAddress\": \"曾屋路二高门口正对面\",\n                    \"wfType\": \"违法停车\",\n                    \"wfDesc\": null,\n                    \"hphm\": \"鄂DGQ031\",\n                    \"hpzl\": \"蓝底白字\",\n                    \"pic1Url\": \"http://hualuosakura.top/picture/%E9%84%82DGQ031%202023-6-17.jpg\",\n                    \"pic2Url\": null,\n                    \"pic3Url\": null\n                },\n                \"level\": null,\n                \"examineId\": null,\n                \"examineName\": null,\n                \"handlerId\": null,\n                \"handlerName\": null,\n                \"isPublic\": 0,\n                \"status\": \"等待审核\"\n            }\n        ],\n        \"current\": 1,\n        \"size\": 10,\n        \"total\": 3,\n        \"pages\": 1,\n        \"hasPrevious\": false,\n        \"hasNext\": false\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "条件查询",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/admin/accept/search?accept_id&status=通过审核&is_public",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"accept",
+										"search"
+									],
+									"query": [
+										{
+											"key": "accept_id",
+											"value": null
+										},
+										{
+											"key": "status",
+											"value": "通过审核"
+										},
+										{
+											"key": "is_public",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "批量删除",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[1, 2]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/accept/delete",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"accept",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "审核",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "userId",
+											"value": "3",
+											"type": "default"
+										},
+										{
+											"key": "acceptId",
+											"value": "6",
+											"type": "default"
+										},
+										{
+											"key": "status",
+											"value": "审核通过",
+											"type": "default"
+										},
+										{
+											"key": "point",
+											"value": "10000",
+											"type": "default"
+										},
+										{
+											"key": "examineId",
+											"value": "1",
+											"type": "default"
+										},
+										{
+											"key": "examineName",
+											"value": "张三",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/accept/examine",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"accept",
+										"examine"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "商品接口",
+					"item": [
+						{
+							"name": "查询商品列表",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/admin/goods/all?current=1&size=10",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"goods",
+										"all"
+									],
+									"query": [
+										{
+											"key": "current",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "删除商品",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[1,2]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/goods/delete",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"goods",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "修改商品",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "picUrl",
+											"value": "https://img2.baidu.com/it/u=3793467079,2432045163&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500",
+											"type": "default"
+										},
+										{
+											"key": "point",
+											"value": "50",
+											"type": "default"
+										},
+										{
+											"key": "stocks",
+											"value": "99",
+											"type": "default"
+										},
+										{
+											"key": "title",
+											"value": "蓝月亮洗衣液",
+											"type": "default"
+										},
+										{
+											"key": "goodsId",
+											"value": "1",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/goods/update",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"goods",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "添加商品",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "picUrl",
+											"value": "https://nimg.ws.126.net/?url=https://cms-bucket.nosdn.127.net/catchpic/7/7A/7A41F10C4A2B5A092D3F5AD52DD5EC1E.jpg&thumbnail=660x2147483647&quality=80&type=jpg",
+											"type": "default"
+										},
+										{
+											"key": "point",
+											"value": "888",
+											"type": "default"
+										},
+										{
+											"key": "stocks",
+											"value": "9999",
+											"type": "default"
+										},
+										{
+											"key": "title",
+											"value": "M4A1雷神",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/goods/add",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"goods",
+										"add"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "用户接口",
+					"item": [
+						{
+							"name": "查询用户列表",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/admin/user/all?current=1&size=10",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"user",
+										"all"
+									],
+									"query": [
+										{
+											"key": "current",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "删除用户",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[3]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/user/delete",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"user",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "修改用户",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "userId",
+											"value": "3",
+											"type": "default"
+										},
+										{
+											"key": "nickName",
+											"value": "测试",
+											"type": "default"
+										},
+										{
+											"key": "username",
+											"value": "ad",
+											"type": "default"
+										},
+										{
+											"key": "phoneNum",
+											"value": "18187158542",
+											"type": "default"
+										},
+										{
+											"key": "name",
+											"value": "小红",
+											"type": "default"
+										},
+										{
+											"key": "isEnabled",
+											"value": "1",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/user/update",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"user",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "查询当前用户信息",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/admin/user/info?user_id=1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"user",
+										"info"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "订单接口",
+					"item": [
+						{
+							"name": "查询订单列表",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/admin/order/all?current=1&size=10",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"order",
+										"all"
+									],
+									"query": [
+										{
+											"key": "current",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "删除订单",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[1]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/order/delete",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"order",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "用户接口",
+			"item": [
+				{
+					"name": "商品接口",
+					"item": [
+						{
+							"name": "get all",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/user/goods/all",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"goods",
+										"all"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "收获地址接口",
+					"item": [
+						{
+							"name": "get all",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/user/address/all/3",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"address",
+										"all",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get default",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/user/address/default/2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"address",
+										"default",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "user_id",
+											"value": "3",
+											"type": "default"
+										},
+										{
+											"key": "name",
+											"value": "张三",
+											"type": "default"
+										},
+										{
+											"key": "phone_num",
+											"value": "123975641124",
+											"type": "default"
+										},
+										{
+											"key": "area",
+											"value": "湖南省-常德市-武陵区",
+											"type": "default"
+										},
+										{
+											"key": "address",
+											"value": "香格里拉领域",
+											"type": "default"
+										},
+										{
+											"key": "is_default",
+											"value": "1",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/user/address/add",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"address",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "text"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/user/address/update",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"address",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/user/address/delete?user_id=3&address_id=3",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"address",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": "3"
+										},
+										{
+											"key": "address_id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "订单接口",
+					"item": [
+						{
+							"name": "获取用户订单列表",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/user/order/all?user_id=3",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"order",
+										"all"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": "3",
+											"description": "用户id"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "添加订单",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "goods_id",
+											"value": "1",
+											"type": "default"
+										},
+										{
+											"key": "user_id",
+											"value": "3",
+											"type": "default"
+										},
+										{
+											"key": "address_id",
+											"value": "1",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/user/order/add",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"order",
+										"add"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "用户相关接口",
+					"item": [
+						{
+							"name": "获取当前登录用户信息",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/user/info?user_id=2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"info"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "修改密码",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "user_id",
+											"value": "3",
+											"type": "default"
+										},
+										{
+											"key": "passwd",
+											"value": "1234",
+											"type": "default"
+										},
+										{
+											"key": "new_passwd",
+											"value": "123",
+											"type": "default"
+										},
+										{
+											"key": "repeat",
+											"value": "123",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/user/update/passwd",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"update",
+										"passwd"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "signout",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/user/signout",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"signout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "signup",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "zhangsan",
+											"type": "default"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"type": "default"
+										},
+										{
+											"key": "phone_num",
+											"value": "13975641124",
+											"type": "default"
+										},
+										{
+											"key": "sms_code",
+											"value": "705690",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/user/signup",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"signup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "修改个人信息",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "nick_name",
+											"value": "昵称",
+											"type": "default"
+										},
+										{
+											"key": "phone_num",
+											"value": "110",
+											"type": "default"
+										},
+										{
+											"key": "name",
+											"value": "赵六",
+											"type": "default"
+										},
+										{
+											"key": "user_id",
+											"value": "3",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/user/update/info",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"update",
+										"info"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "积分接口",
+					"item": [
+						{
+							"name": "user points details",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/user/points/details?user_id=2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"points",
+										"details"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "举报接口",
+					"item": [
+						{
+							"name": "提交举报信息",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "user_id",
+											"value": "3",
+											"type": "default"
+										},
+										{
+											"key": "hphm",
+											"value": "湘JL2710",
+											"type": "default"
+										},
+										{
+											"key": "address",
+											"value": "火星",
+											"type": "default"
+										},
+										{
+											"key": "type",
+											"value": "违法停车",
+											"type": "default"
+										},
+										{
+											"key": "pic1_url",
+											"value": "test",
+											"type": "default"
+										},
+										{
+											"key": "pic2_url",
+											"value": "",
+											"type": "default"
+										},
+										{
+											"key": "pic3_url",
+											"value": "",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/user/report/submit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"report",
+										"submit"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "查询用户举报列表",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "首页接口",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user/index",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"index"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "index",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/user/index",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"index"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 18 Jun 2023 07:52:12 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"msg\": \"success\",\n    \"data\": [\n        {\n            \"acceptId\": 2,\n            \"reportVo\": {\n                \"userVo\": {\n                    \"userId\": 2,\n                    \"nickName\": \"Jerry\",\n                    \"avatarUrl\": \"http://hualuosakura.top/avatar/fox.jpg\",\n                    \"username\": \"test\",\n                    \"idcard\": \"430702199003073179\",\n                    \"phoneNum\": \"18473612917\"\n                },\n                \"wfTime\": \"2023-06-17 01:10:16\",\n                \"wfAddress\": \"中华园红绿灯路口\",\n                \"wfType\": \"逆行\",\n                \"wfDesc\": \"违法信息描述\",\n                \"hphm\": \"桂JRN950\",\n                \"hpzl\": \"蓝底白字\",\n                \"pic1Url\": \"http://hualuosakura.top/picture/%E6%A1%82JAH090%202023-6-17.jpg\",\n                \"pic2Url\": null,\n                \"pic3Url\": null\n            },\n            \"level\": \"严重隐患\",\n            \"examineId\": 1,\n            \"examineName\": \"张三\",\n            \"handlerId\": 1,\n            \"handlerName\": \"张三\",\n            \"isPublic\": 1,\n            \"status\": \"通过审核\"\n        },\n        {\n            \"acceptId\": 4,\n            \"reportVo\": {\n                \"userVo\": {\n                    \"userId\": 3,\n                    \"nickName\": \"Putty\",\n                    \"avatarUrl\": \"http://hualuosakura.top/avatar/fox.jpg\",\n                    \"username\": \"ad\",\n                    \"idcard\": \"430702199003073167\",\n                    \"phoneNum\": \"18187158512\"\n                },\n                \"wfTime\": \"2023-06-17 01:10:16\",\n                \"wfAddress\": \"曾屋路二高门口正对面\",\n                \"wfType\": \"违法停车\",\n                \"wfDesc\": \"违法信息描述\",\n                \"hphm\": \"鄂DGQ031\",\n                \"hpzl\": \"蓝底白字\",\n                \"pic1Url\": \"http://hualuosakura.top/picture/%E9%84%82DGQ031%202023-6-17.jpg\",\n                \"pic2Url\": null,\n                \"pic3Url\": null\n            },\n            \"level\": \"一般隐患\",\n            \"examineId\": 1,\n            \"examineName\": \"张三\",\n            \"handlerId\": null,\n            \"handlerName\": null,\n            \"isPublic\": 1,\n            \"status\": \"通过审核\"\n        },\n        {\n            \"acceptId\": 5,\n            \"reportVo\": {\n                \"userVo\": {\n                    \"userId\": 3,\n                    \"nickName\": \"Putty\",\n                    \"avatarUrl\": \"http://hualuosakura.top/avatar/fox.jpg\",\n                    \"username\": \"ad\",\n                    \"idcard\": \"430702199003073167\",\n                    \"phoneNum\": \"18187158512\"\n                },\n                \"wfTime\": \"2023-06-17 01:10:16\",\n                \"wfAddress\": \"曾屋路二高门口正对面\",\n                \"wfType\": \"违法停车\",\n                \"wfDesc\": \"违法信息描述\",\n                \"hphm\": \"鄂DGQ031\",\n                \"hpzl\": \"蓝底白字\",\n                \"pic1Url\": \"http://hualuosakura.top/picture/%E9%84%82DGQ031%202023-6-17.jpg\",\n                \"pic2Url\": null,\n                \"pic3Url\": null\n            },\n            \"level\": \"一般隐患\",\n            \"examineId\": 1,\n            \"examineName\": \"张三\",\n            \"handlerId\": 1,\n            \"handlerName\": \"张三\",\n            \"isPublic\": 1,\n            \"status\": \"通过审核\"\n        },\n        {\n            \"acceptId\": 6,\n            \"reportVo\": {\n                \"userVo\": {\n                    \"userId\": 3,\n                    \"nickName\": \"Putty\",\n                    \"avatarUrl\": \"http://hualuosakura.top/avatar/fox.jpg\",\n                    \"username\": \"ad\",\n                    \"idcard\": \"430702199003073167\",\n                    \"phoneNum\": \"18187158512\"\n                },\n                \"wfTime\": \"2023-06-17 01:10:16\",\n                \"wfAddress\": \"曾屋路二高门口正对面\",\n                \"wfType\": \"违法停车\",\n                \"wfDesc\": \"违法信息描述\",\n                \"hphm\": \"鄂DGQ031\",\n                \"hpzl\": \"蓝底白字\",\n                \"pic1Url\": \"http://hualuosakura.top/picture/%E9%84%82DGQ031%202023-6-17.jpg\",\n                \"pic2Url\": null,\n                \"pic3Url\": null\n            },\n            \"level\": \"严重隐患\",\n            \"examineId\": 1,\n            \"examineName\": \"张三\",\n            \"handlerId\": 1,\n            \"handlerName\": \"张三\",\n            \"isPublic\": 1,\n            \"status\": \"通过审核\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "文件接口",
+			"item": [
+				{
+					"name": "七牛云OSS接口",
+					"item": [
+						{
+							"name": "上传文件",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/LiuShuixiu/Pictures/联想锁屏壁纸/8633433.jpg"
+										},
+										{
+											"key": "location",
+											"value": "picture",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/file/oss/upload",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"file",
+										"oss",
+										"upload"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "upload file",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "files",
+													"type": "file",
+													"src": "/C:/Users/User/Pictures/Saved Pictures/knapsack.png"
+												},
+												{
+													"key": "location",
+													"value": "picture",
+													"type": "default"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/file/oss/upload",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"file",
+												"oss",
+												"upload"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 17 Jun 2023 17:45:04 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 200,\n    \"msg\": \"success\",\n    \"data\": {\n        \"pic1Url\": \"http://hualuosakura.top/picture/81225d5fa4d4417b8c71b1e9a6453cc8knapsack.png\"\n    }\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
